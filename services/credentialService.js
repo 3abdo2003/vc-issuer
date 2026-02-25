@@ -1,6 +1,7 @@
 const { sign } = require("./cryptoService");
 
-const DID = "did:web:localhost%3A4000";
+const PUBLIC_URL = "https://vpn-televisions-wants-manufactured.trycloudflare.com";
+const DID = `did:web:${PUBLIC_URL}`;
 
 // In-memory store for issued credentials
 const credentialsStore = new Map();
@@ -21,18 +22,18 @@ function buildCredential(studentName, courseTitle) {
         },
         issuanceDate: new Date().toISOString(),
         credentialStatus: {
-            id: `http://localhost:4000/credentials/status/${credentialId}`,
+            id: `${PUBLIC_URL}/credentials/status/${credentialId}`,
             type: "StatusList2021Entry",
             statusPurpose: "revocation",
             statusListIndex: "0",
-            statusListCredential: "http://localhost:4000/credentials/status/list/1",
+            statusListCredential: `${PUBLIC_URL}/credentials/status/list/1`,
         },
         credentialSubject: {
             id: "did:example:student123",
             type: ["AchievementSubject"],
             name: studentName,
             achievement: {
-                id: `http://localhost:4000/achievements/${courseTitle.toLowerCase().replace(/\s+/g, "-")}`,
+                id: `${PUBLIC_URL}/achievements/${courseTitle.toLowerCase().replace(/\s+/g, "-")}`,
                 type: ["Achievement"],
                 name: courseTitle,
                 description: `This badge recognizes the successful completion of the ${courseTitle} course.`,

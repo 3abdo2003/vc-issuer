@@ -9,17 +9,17 @@
         "OpenBadgeCredential"
     ],
     "issuer": {
-        "id": "did:web:localhost%3A4000",
+        "id": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com",
         "type": "Issuer",
         "name": "VC Issuer Platform"
     },
     "issuanceDate": "2026-02-25T14:21:23.122Z",
     "credentialStatus": {
-        "id": "http://localhost:4000/credentials/status/urn:uuid:9bdcfb91-cc1c-4256-9e1d-afbd9ebb5d16",
+        "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:9bdcfb91-cc1c-4256-9e1d-afbd9ebb5d16",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "0",
-        "statusListCredential": "http://localhost:4000/credentials/status/list/1"
+        "statusListCredential": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/list/1"
     },
     "credentialSubject": {
         "id": "did:example:student123",
@@ -28,7 +28,7 @@
         ],
         "name": "Abdelsamie",
         "achievement": {
-            "id": "http://localhost:4000/achievements/node.js-course",
+            "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/achievements/node.js-course",
             "type": [
                 "Achievement"
             ],
@@ -48,7 +48,7 @@
         "type": "Ed25519Signature2020",
         "created": "2026-02-25T14:21:23.127Z",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:web:localhost%3A4000#key-1",
+        "verificationMethod": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com#key-1",
         "signature": "99l00QvvIKuXfzJgp3Ejsx1JJ/WGOHCzreh6etRHUKzCGwcB4fXLerb66lTWxtkN1LrIa8mJ/hQglYTfM4RPCw=="
     }
 }

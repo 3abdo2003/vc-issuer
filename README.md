@@ -78,7 +78,7 @@ Standard JSON isn't enough for global interoperability. We use **JSON-LD** (Link
 
 ### Issue a Custom Badge
 Call the API with parameters:
-`GET http://localhost:4000/credentials/issue?name=John&course=Advanced+React`
+`GET https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/issue?name=John&course=Advanced+React`
 
 ### Verify an Issued Badge
 Save the output to a file (e.g., `test.json`) and run:
@@ -99,7 +99,7 @@ node verify.js test.json
 ```
 
 ### Check Revocation Status
-`GET http://localhost:4000/credentials/status/urn:uuid:...`
+`GET https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:...`
 **Response**: `{"id": "...", "revoked": false, "message": "..."}`
 
 

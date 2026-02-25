@@ -9,17 +9,17 @@
         "OpenBadgeCredential"
     ],
     "issuer": {
-        "id": "did:web:localhost%3A4000",
+        "id": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com",
         "type": "Issuer",
         "name": "VC Issuer Platform"
     },
     "issuanceDate": "2026-02-25T14:31:57.177Z",
     "credentialStatus": {
-        "id": "http://localhost:4000/credentials/status/urn:uuid:ab1ed658-c934-47a4-862a-e3c0510f4270",
+        "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:ab1ed658-c934-47a4-862a-e3c0510f4270",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "0",
-        "statusListCredential": "http://localhost:4000/credentials/status/list/1"
+        "statusListCredential": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/list/1"
     },
     "credentialSubject": {
         "id": "did:example:student123",
@@ -28,7 +28,7 @@
         ],
         "name": "Alice",
         "achievement": {
-            "id": "http://localhost:4000/achievements/blockchain-mastery",
+            "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/achievements/blockchain-mastery",
             "type": [
                 "Achievement"
             ],
@@ -48,7 +48,7 @@
         "type": "Ed25519Signature2020",
         "created": "2026-02-25T14:31:57.182Z",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:web:localhost%3A4000#key-1",
+        "verificationMethod": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com#key-1",
         "signature": "qc/vw4Hrz5i8OvLdAdZAz9ebF/jslRe0RNwFBDnFOZGKna13tqg4YT6IWWsF98nU1nV+NysreI6q29mrMEfsCA=="
     }
 }

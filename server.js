@@ -25,10 +25,10 @@ app.use(credentialRoutes);
 app.use(statusRoutes);
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-    console.log(`✅ Server running on http://localhost:${PORT}`);
-    console.log(`   DID Document : http://localhost:${PORT}/.well-known/did.json`);
-    console.log(`   Test VC      : http://localhost:${PORT}/credentials/test`);
-    console.log(`   Issue VC     : http://localhost:${PORT}/credentials/issue?name=Alice&course=Blockchain`);
-    console.log(`   Status       : http://localhost:${PORT}/status`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`✅ Server running on http://0.0.0.0:${PORT}`);
+    console.log(`   DID Document : http://0.0.0.0:${PORT}/.well-known/did.json`);
+    console.log(`   Test VC      : http://0.0.0.0:${PORT}/credentials/test`);
+    console.log(`   Issue VC     : http://0.0.0.0:${PORT}/credentials/issue?name=Alice&course=Blockchain`);
+    console.log(`   Status       : http://0.0.0.0:${PORT}/status`);
 });

@@ -1,6 +1,6 @@
 const { getPublicKeyJwk } = require("./cryptoService");
 
-const DID = "did:web:localhost%3A4000";
+const DID = "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com";
 
 // Builds a spec-compliant DID Document using the JsonWebKey2020 type.
 // The publicKeyJwk field is what wallets (LinkedIn, employers) use to verify signatures.
