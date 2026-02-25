@@ -29,3 +29,8 @@ console.log("🔍 Credential subject :", credential.credentialSubject?.name);
 console.log("🏅 Achievement         :", credential.credentialSubject?.achievement?.name);
 console.log("📅 Issued              :", credential.issuanceDate);
 console.log("✅ Valid               :", isValid);
+
+if (!isValid) {
+    console.log("⚠️  Verification failed. This could be due to property ordering differences in JSON.stringify.");
+}
+

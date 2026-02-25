@@ -1,25 +1,54 @@
 {
     "@context": [
-        "https://www.w3.org/2018/credentials/v1"
+        "https://www.w3.org/2018/credentials/v1",
+        "https://purl.imsglobal.org/spec/ob/v3p0/context.json"
     ],
+    "id": "urn:uuid:9bdcfb91-cc1c-4256-9e1d-afbd9ebb5d16",
     "type": [
-        "VerifiableCredential"
+        "VerifiableCredential",
+        "OpenBadgeCredential"
     ],
-    "issuer": "did:web:localhost%3A4000",
-    "issuanceDate": "2026-02-25T13:33:29.850Z",
+    "issuer": {
+        "id": "did:web:localhost%3A4000",
+        "type": "Issuer",
+        "name": "VC Issuer Platform"
+    },
+    "issuanceDate": "2026-02-25T14:21:23.122Z",
+    "credentialStatus": {
+        "id": "http://localhost:4000/credentials/status/urn:uuid:9bdcfb91-cc1c-4256-9e1d-afbd9ebb5d16",
+        "type": "StatusList2021Entry",
+        "statusPurpose": "revocation",
+        "statusListIndex": "0",
+        "statusListCredential": "http://localhost:4000/credentials/status/list/1"
+    },
     "credentialSubject": {
         "id": "did:example:student123",
+        "type": [
+            "AchievementSubject"
+        ],
         "name": "Abdelsamie",
         "achievement": {
-            "type": "Achievement",
-            "name": "Node.js Course"
+            "id": "http://localhost:4000/achievements/node.js-course",
+            "type": [
+                "Achievement"
+            ],
+            "name": "Node.js Course",
+            "description": "This badge recognizes the successful completion of the Node.js Course course.",
+            "criteria": {
+                "type": "Criteria",
+                "narrative": "Completion of all course modules and final assessment."
+            },
+            "image": {
+                "id": "https://example.com/badges/course-image.png",
+                "type": "Image"
+            }
         }
     },
     "proof": {
         "type": "Ed25519Signature2020",
-        "created": "2026-02-25T13:33:29.855Z",
+        "created": "2026-02-25T14:21:23.127Z",
         "proofPurpose": "assertionMethod",
         "verificationMethod": "did:web:localhost%3A4000#key-1",
-        "signature": "sIuFSdEV8W69XbcpdLT4mbUil0+MsPyX2S3lgtkGUh90FCtjc5x/VuL2QdpB7YllvFexAS/M26ORBu1uXg3KCA=="
+        "signature": "99l00QvvIKuXfzJgp3Ejsx1JJ/WGOHCzreh6etRHUKzCGwcB4fXLerb66lTWxtkN1LrIa8mJ/hQglYTfM4RPCw=="
     }
 }

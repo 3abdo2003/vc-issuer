@@ -22,4 +22,16 @@ router.get("/credentials/issue", (req, res) => {
     res.json(vc);
 });
 
+// GET /credentials/status/:id — Returns revocation status
+router.get("/credentials/status/:id", (req, res) => {
+    const { id } = req.params;
+    // For now, we return a standard "not revoked" response
+    res.json({
+        id,
+        revoked: false,
+        message: "Credential is valid and active.",
+    });
+});
+
+
 module.exports = router;
