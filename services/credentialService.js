@@ -2,6 +2,9 @@ const { sign } = require("./cryptoService");
 
 const DID = "did:web:localhost%3A4000";
 
+// In-memory store for issued credentials
+const credentialsStore = new Map();
+
 function buildCredential(studentName, courseTitle) {
     const credentialId = `urn:uuid:${require("crypto").randomUUID()}`;
     const credential = {
@@ -46,8 +49,7 @@ function buildCredential(studentName, courseTitle) {
     };
 
     const signature = sign(credential);
-
-    return {
+    const signedVc = {
         ...credential,
         proof: {
             type: "Ed25519Signature2020",
@@ -57,7 +59,15 @@ function buildCredential(studentName, courseTitle) {
             signature,
         },
     };
+
+    // Save to store
+    credentialsStore.set(credentialId, signedVc);
+
+    return signedVc;
 }
 
+function getCredentialById(id) {
+    return credentialsStore.get(id);
+}
 
-module.exports = { buildCredential };
+module.exports = { buildCredential, getCredentialById };

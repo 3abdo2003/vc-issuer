@@ -1,5 +1,5 @@
 const express = require("express");
-const { buildCredential } = require("../services/credentialService");
+const { buildCredential, getCredentialById } = require("../services/credentialService");
 
 const router = express.Router();
 
@@ -22,9 +22,24 @@ router.get("/credentials/issue", (req, res) => {
     res.json(vc);
 });
 
+// GET /credentials/:id — Retrieve a specific signed credential
+router.get("/credentials/:id", (req, res) => {
+    const { id } = req.params;
+    const vc = getCredentialById(id);
+    if (!vc) {
+        return res.status(404).json({ error: "Credential not found." });
+    }
+    res.json(vc);
+});
+
 // GET /credentials/status/:id — Returns revocation status
 router.get("/credentials/status/:id", (req, res) => {
     const { id } = req.params;
+    // We check if the credential exists first
+    const vc = getCredentialById(id);
+    if (!vc) {
+        return res.status(404).json({ error: "Credential not found." });
+    }
     // For now, we return a standard "not revoked" response
     res.json({
         id,
@@ -32,6 +47,5 @@ router.get("/credentials/status/:id", (req, res) => {
         message: "Credential is valid and active.",
     });
 });
-
 
 module.exports = router;
