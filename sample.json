@@ -1,0 +1,25 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "type": [
+        "VerifiableCredential"
+    ],
+    "issuer": "did:web:localhost%3A4000",
+    "issuanceDate": "2026-02-25T13:33:29.850Z",
+    "credentialSubject": {
+        "id": "did:example:student123",
+        "name": "Abdelsamie",
+        "achievement": {
+            "type": "Achievement",
+            "name": "Node.js Course"
+        }
+    },
+    "proof": {
+        "type": "Ed25519Signature2020",
+        "created": "2026-02-25T13:33:29.855Z",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:localhost%3A4000#key-1",
+        "signature": "sIuFSdEV8W69XbcpdLT4mbUil0+MsPyX2S3lgtkGUh90FCtjc5x/VuL2QdpB7YllvFexAS/M26ORBu1uXg3KCA=="
+    }
+}
