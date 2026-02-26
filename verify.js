@@ -36,8 +36,8 @@ const isValid = verify(bareCredential, proof.signature, publicKey);
 
 console.log("-----------------------------------------");
 console.log("🔍 Credential ID      :", credential.id);
-console.log("👤 Subject Name       :", credential.credentialSubject?.name);
-console.log("🏅 Achievement        :", credential.credentialSubject?.achievement?.name);
+console.log("👤 Subject Name       :", credential.recipient?.name);
+console.log("🏅 Achievement        :", credential.badge?.name);
 console.log("📅 Issued             :", credential.issuanceDate);
 console.log("-----------------------------------------");
 console.log(isValid ? "✅ Signature Valid: true" : "❌ Signature Valid: false");

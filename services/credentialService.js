@@ -1,51 +1,58 @@
 const { sign } = require("./cryptoService");
 
-const PUBLIC_URL = "https://vpn-televisions-wants-manufactured.trycloudflare.com";
+const PUBLIC_URL = "https://ministry-spreading-states-coding.trycloudflare.com";
+// Open Badges v2 issuer profile URL (must be same-origin HTTPS)
+const ISSUER_URL = `${PUBLIC_URL}/issuer`;
+// DID is still used for cryptographic verification of the proof
 const DID = `did:web:${PUBLIC_URL}`;
 
 // In-memory store for issued credentials
 const credentialsStore = new Map();
 
-function buildCredential(studentName, courseTitle) {
-    const credentialId = `urn:uuid:${require("crypto").randomUUID()}`;
+function buildCredential(studentName, courseTitle, overrideUuid = null) {
+    const uuid = overrideUuid || require("crypto").randomUUID();
+    const credentialId = `${PUBLIC_URL}/credentials/${uuid}`;
+    const courseSlug = courseTitle.toLowerCase().replace(/\s+/g, "-");
+
     const credential = {
-        "@context": [
-            "https://www.w3.org/2018/credentials/v1",
-            "https://purl.imsglobal.org/spec/ob/v3p0/context.json",
-        ],
+        // Use a single context string for maximum compatibility
+        "@context": "https://w3id.org/openbadges/v2",
         id: credentialId,
-        type: ["VerifiableCredential", "OpenBadgeCredential"],
-        issuer: {
-            id: DID,
-            type: "Issuer",
-            name: "VC Issuer Platform",
+        type: "Assertion",
+        // Many consumers expect issuer to be a URL string to an Issuer Profile
+        issuer: ISSUER_URL,
+        // Open Badge Passport expects an "issuedOn" field (v2) and
+        // internally maps it to an integer timestamp.
+        issuedOn: new Date().toISOString(),
+        recipient: {
+            type: "email",
+            hashed: false,
+            identity: "abdulsamea2003@gmail.com",
+            name: studentName,
         },
-        issuanceDate: new Date().toISOString(),
+        badge: {
+            id: `${PUBLIC_URL}/achievements/${courseSlug}`,
+            type: "BadgeClass",
+            name: courseTitle,
+            description: `This badge recognizes the successful completion of the ${courseTitle} course.`,
+            image: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg",
+            criteria: {
+                type: "Criteria",
+                narrative: "Completion of all course modules and final assessment.",
+            },
+            // BadgeClass issuer is also a URL string to the same Issuer Profile
+            issuer: ISSUER_URL,
+        },
+        // Required by many Open Badges consumers for hosted assertions
+        verification: {
+            type: "HostedBadge",
+        },
         credentialStatus: {
-            id: `${PUBLIC_URL}/credentials/status/${credentialId}`,
+            id: `${PUBLIC_URL}/credentials/status/urn:uuid:${uuid}`,
             type: "StatusList2021Entry",
             statusPurpose: "revocation",
             statusListIndex: "0",
             statusListCredential: `${PUBLIC_URL}/credentials/status/list/1`,
-        },
-        credentialSubject: {
-            id: "did:example:student123",
-            type: ["AchievementSubject"],
-            name: studentName,
-            achievement: {
-                id: `${PUBLIC_URL}/achievements/${courseTitle.toLowerCase().replace(/\s+/g, "-")}`,
-                type: ["Achievement"],
-                name: courseTitle,
-                description: `This badge recognizes the successful completion of the ${courseTitle} course.`,
-                criteria: {
-                    type: "Criteria",
-                    narrative: "Completion of all course modules and final assessment.",
-                },
-                image: {
-                    id: "https://example.com/badges/course-image.png",
-                    type: "Image",
-                },
-            },
         },
     };
 
@@ -61,8 +68,8 @@ function buildCredential(studentName, courseTitle) {
         },
     };
 
-    // Save to store
-    credentialsStore.set(credentialId, signedVc);
+    // Save to store using the UUID as index (or the full URL)
+    credentialsStore.set(uuid, signedVc);
 
     return signedVc;
 }

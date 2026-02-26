@@ -1,54 +1,49 @@
 {
     "@context": [
-        "https://www.w3.org/2018/credentials/v1",
-        "https://purl.imsglobal.org/spec/ob/v3p0/context.json"
+        "https://w3id.org/openbadges/v2"
     ],
-    "id": "urn:uuid:9bdcfb91-cc1c-4256-9e1d-afbd9ebb5d16",
-    "type": [
-        "VerifiableCredential",
-        "OpenBadgeCredential"
-    ],
+    "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/test",
+    "type": "Assertion",
     "issuer": {
-        "id": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com",
+        "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
         "type": "Issuer",
         "name": "VC Issuer Platform"
     },
-    "issuanceDate": "2026-02-25T14:21:23.122Z",
+    "issuanceDate": "2026-02-26T14:49:53.698Z",
+    "recipient": {
+        "type": "email",
+        "hashed": false,
+        "identity": "abdulsamea2003@gmail.com",
+        "name": "Abdelsamie"
+    },
+    "badge": {
+        "id": "https://ministry-spreading-states-coding.trycloudflare.com/achievements/node.js-course",
+        "type": "BadgeClass",
+        "name": "Node.js Course",
+        "description": "This badge recognizes the successful completion of the Node.js Course course.",
+        "image": "https://example.com/badges/course-image.png",
+        "criteria": {
+            "type": "Criteria",
+            "narrative": "Completion of all course modules and final assessment."
+        },
+        "issuer": {
+            "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
+            "type": "Issuer",
+            "name": "VC Issuer Platform"
+        }
+    },
     "credentialStatus": {
-        "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:9bdcfb91-cc1c-4256-9e1d-afbd9ebb5d16",
+        "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/urn:uuid:test",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "0",
-        "statusListCredential": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/list/1"
-    },
-    "credentialSubject": {
-        "id": "did:example:student123",
-        "type": [
-            "AchievementSubject"
-        ],
-        "name": "Abdelsamie",
-        "achievement": {
-            "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/achievements/node.js-course",
-            "type": [
-                "Achievement"
-            ],
-            "name": "Node.js Course",
-            "description": "This badge recognizes the successful completion of the Node.js Course course.",
-            "criteria": {
-                "type": "Criteria",
-                "narrative": "Completion of all course modules and final assessment."
-            },
-            "image": {
-                "id": "https://example.com/badges/course-image.png",
-                "type": "Image"
-            }
-        }
+        "statusListCredential": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/list/1"
     },
     "proof": {
         "type": "Ed25519Signature2020",
-        "created": "2026-02-25T14:21:23.127Z",
+        "created": "2026-02-26T14:49:53.714Z",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com#key-1",
-        "signature": "99l00QvvIKuXfzJgp3Ejsx1JJ/WGOHCzreh6etRHUKzCGwcB4fXLerb66lTWxtkN1LrIa8mJ/hQglYTfM4RPCw=="
+        "verificationMethod": "did:web:https://ministry-spreading-states-coding.trycloudflare.com#key-1",
+        "signature": "yyPE/XQgGn3bUNcsdtgB2IpQtybfzczidGiAgiCLvWg53zYFJ9bweaFSTIS7rCq7TOTmQlHkzf7SCBnEKs9VDg=="
     }
 }

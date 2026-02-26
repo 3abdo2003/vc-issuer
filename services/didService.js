@@ -1,6 +1,6 @@
-const { getPublicKeyJwk } = require("./cryptoService");
+const { getPublicKeyBase58 } = require("./cryptoService");
 
-const DID = "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com";
+const DID = "did:web:https://ministry-spreading-states-coding.trycloudflare.com";
 
 // Builds a spec-compliant DID Document using the JsonWebKey2020 type.
 // The publicKeyJwk field is what wallets (LinkedIn, employers) use to verify signatures.
@@ -11,9 +11,9 @@ function getDIDDocument() {
         verificationMethod: [
             {
                 id: `${DID}#key-1`,
-                type: "JsonWebKey2020",         // ← spec requires this (not Ed25519VerificationKey2020)
+                type: "Ed25519VerificationKey2020",
                 controller: DID,
-                publicKeyJwk: getPublicKeyJwk(), // ← { kty: "OKP", crv: "Ed25519", x: "<base64url>" }
+                publicKeyBase58: getPublicKeyBase58(),
             },
         ],
         assertionMethod: [`${DID}#key-1`],

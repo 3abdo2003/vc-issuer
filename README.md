@@ -1,6 +1,6 @@
 # VC Issuer — Platform Identity & Trust Layer
 
-A high-security, standards-compliant **Verifiable Credential (VC)** issuer platform. This system implements the **Open Badges 3.0 (OBv3)** standard and provides a robust cryptographic foundation for issuing digital credentials that are globally recognizable and tamper-proof.
+A high-security, standards-compliant **Verifiable Credential (VC)** issuer platform. This system implements the **Open Badges 2.0 (OBv2)** standard and provides a robust cryptographic foundation for issuing digital credentials that are globally recognizable and tamper-proof.
 
 ---
 
@@ -11,7 +11,7 @@ A high-security, standards-compliant **Verifiable Credential (VC)** issuer platf
 - **Cryptography**: [TweetNaCl.js](https://tweetnacl.js.org/) (Audited implementation of Ed25519)
 - **Standards**: 
   - **W3C Verifiable Credentials**: The core data container format.
-  - **Open Badges 3.0 (OBv3)**: Specialized schema for achievements and badges.
+  - **Open Badges 2.0 (OBv2)**: Specialized schema for achievements and badges.
   - **DID:Web**: Decentralized Identifier method for domain-based identity.
   - **JsonWebKey2020**: Standard format for representing cryptographic keys.
 
@@ -23,7 +23,7 @@ Imagine a student, **Alice**, completes a "Blockchain Mastery" course. Here is t
 
 1. **Identity Setup**: The institution (Issuer) initializes their platform. This generates a unique **Private Seal** (Private Key) and a **Public Validator** (Public Key).
 2. **Global ID**: The platform announces itself to the world via a **DID Document** at `/.well-known/did.json`. This tells any wallet or employer: *"If you see a signature from me, here is the public key you need to verify it."*
-3. **Issuance**: When Alice graduates, the Issuer calls the `/credentials/issue` endpoint. The platform takes her name and course, crafts a compliant **OBv3 JSON**, and stamps it with the Private Seal.
+3. **Issuance**: When Alice graduates, the Issuer calls the `/credentials/issue` endpoint. The platform takes her name and course, crafts a compliant **OB 2.0 JSON**, and stamps it with the Private Seal.
 4. **Certificate Receipt**: Alice receives a signed JSON file. This is her **Verifiable Credential**. She can store it in a digital wallet or share it on LinkedIn.
 5. **Verification**: An employer receives Alice's certificate. Their system automatically:
    - Fetches the Issuer's Public Key from the DID Document.
@@ -44,7 +44,7 @@ Imagine a student, **Alice**, completes a "Blockchain Mastery" course. Here is t
 ### `services/` — The Logic Layer
 - `cryptoService.js`: The most critical security file. It handles the low-level signing and verification math, and converts raw keys into standardized **JSON Web Keys (JWK)**.
 - `didService.js`: Constructs the platform's public identity document according to global decentralized identity standards.
-- `credentialService.js`: The "Badge Factory." It builds the Open Badges 3.0 data structure, applies the cryptographic signature, and manages the temporary in-memory storage of all issued badges.
+- `credentialService.js`: The "Badge Factory." It builds the Open Badges 2.0 data structure, applies the cryptographic signature, and manages the temporary in-memory storage of all issued badges.
 
 ### `routes/` — The API Layer
 - `did.js`: Serves the DID Document. Without this, external worlds cannot verify your badges.
@@ -67,7 +67,7 @@ The system doesn't use simple passwords. It uses **Asymmetric Cryptography**.
 ### 2. Decentralized Identity (DID)
 By serving a DID document at `/.well-known/did.json`, the platform becomes part of a global "Web of Trust." Every badge issued contains a `verificationMethod` ID that points back to this URL. This eliminates the need for a central authority (like a government registry) to verify the issuer.
 
-### 3. Open Badges 3.0 (OBv3) Data Integrity
+### 3. Open Badges 2.0 (OBv2) Data Integrity
 Standard JSON isn't enough for global interoperability. We use **JSON-LD** (Linked Data).
 - The `@context` field tells generic computers exactly what "Achievement" or "Criteria" means.
 - The `credentialStatus` field allows a wallet to automatically find the "Check-In" URL for that specific badge to see if it's still active.
@@ -78,7 +78,7 @@ Standard JSON isn't enough for global interoperability. We use **JSON-LD** (Link
 
 ### Issue a Custom Badge
 Call the API with parameters:
-`GET https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/issue?name=John&course=Advanced+React`
+`GET https://funky-annie-roulette-considerable.trycloudflare.com/credentials/issue?name=John&course=Advanced+React`
 
 ### Verify an Issued Badge
 Save the output to a file (e.g., `test.json`) and run:
@@ -99,7 +99,7 @@ node verify.js test.json
 ```
 
 ### Check Revocation Status
-`GET https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:...`
+`GET https://funky-annie-roulette-considerable.trycloudflare.com/credentials/status/urn:uuid:...`
 **Response**: `{"id": "...", "revoked": false, "message": "..."}`
 
 

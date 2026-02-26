@@ -35,6 +35,8 @@ function toBase64Url(bytes) {
     .replace(/=/g, "");
 }
 
+const bs58 = require("bs58").default;
+
 // Returns the Ed25519 public key as a JSON Web Key (JWK) object.
 function getPublicKeyJwk() {
   const { publicKey } = loadKeys();
@@ -43,6 +45,11 @@ function getPublicKeyJwk() {
     crv: "Ed25519",
     x: toBase64Url(publicKey),
   };
+}
+
+function getPublicKeyBase58() {
+  const { publicKey } = loadKeys();
+  return bs58.encode(publicKey);
 }
 
 function generateKeys() {
@@ -68,4 +75,5 @@ module.exports = {
   sign,
   verify,
   getPublicKeyJwk,
+  getPublicKeyBase58,
 };

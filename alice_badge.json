@@ -1,54 +1,49 @@
 {
     "@context": [
-        "https://www.w3.org/2018/credentials/v1",
-        "https://purl.imsglobal.org/spec/ob/v3p0/context.json"
+        "https://w3id.org/openbadges/v2"
     ],
-    "id": "urn:uuid:ab1ed658-c934-47a4-862a-e3c0510f4270",
-    "type": [
-        "VerifiableCredential",
-        "OpenBadgeCredential"
-    ],
+    "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/289ad3b8-30df-4f25-95f4-7074edc82d92",
+    "type": "Assertion",
     "issuer": {
-        "id": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com",
+        "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
         "type": "Issuer",
         "name": "VC Issuer Platform"
     },
-    "issuanceDate": "2026-02-25T14:31:57.177Z",
+    "issuanceDate": "2026-02-26T14:45:04.652Z",
+    "recipient": {
+        "type": "email",
+        "hashed": false,
+        "identity": "student@example.com",
+        "name": "Alice"
+    },
+    "badge": {
+        "id": "https://ministry-spreading-states-coding.trycloudflare.com/achievements/blockchain-mastery",
+        "type": "BadgeClass",
+        "name": "Blockchain Mastery",
+        "description": "This badge recognizes the successful completion of the Blockchain Mastery course.",
+        "image": "https://example.com/badges/course-image.png",
+        "criteria": {
+            "type": "Criteria",
+            "narrative": "Completion of all course modules and final assessment."
+        },
+        "issuer": {
+            "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
+            "type": "Issuer",
+            "name": "VC Issuer Platform"
+        }
+    },
     "credentialStatus": {
-        "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:ab1ed658-c934-47a4-862a-e3c0510f4270",
+        "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/urn:uuid:289ad3b8-30df-4f25-95f4-7074edc82d92",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "0",
-        "statusListCredential": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/list/1"
-    },
-    "credentialSubject": {
-        "id": "did:example:student123",
-        "type": [
-            "AchievementSubject"
-        ],
-        "name": "Alice",
-        "achievement": {
-            "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/achievements/blockchain-mastery",
-            "type": [
-                "Achievement"
-            ],
-            "name": "Blockchain Mastery",
-            "description": "This badge recognizes the successful completion of the Blockchain Mastery course.",
-            "criteria": {
-                "type": "Criteria",
-                "narrative": "Completion of all course modules and final assessment."
-            },
-            "image": {
-                "id": "https://example.com/badges/course-image.png",
-                "type": "Image"
-            }
-        }
+        "statusListCredential": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/list/1"
     },
     "proof": {
         "type": "Ed25519Signature2020",
-        "created": "2026-02-25T14:31:57.182Z",
+        "created": "2026-02-26T14:45:04.659Z",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com#key-1",
-        "signature": "qc/vw4Hrz5i8OvLdAdZAz9ebF/jslRe0RNwFBDnFOZGKna13tqg4YT6IWWsF98nU1nV+NysreI6q29mrMEfsCA=="
+        "verificationMethod": "did:web:https://ministry-spreading-states-coding.trycloudflare.com#key-1",
+        "signature": "8AMRzCs5Tq9B4cONSJEKpi6XRns9KBfyXs0AUnq+UFO4i72BMoPcws/l1qQF8LxKZHYZMNqKmQLsiQ6X5PDqDQ=="
     }
 }

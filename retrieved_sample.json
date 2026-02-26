@@ -1,54 +1,48 @@
 {
     "@context": [
-        "https://www.w3.org/2018/credentials/v1",
-        "https://purl.imsglobal.org/spec/ob/v3p0/context.json"
+        "https://w3id.org/openbadges/v2"
     ],
-    "id": "urn:uuid:965d2ae3-7d45-4ae3-a5ae-35e75140c354",
-    "type": [
-        "VerifiableCredential",
-        "OpenBadgeCredential"
-    ],
+    "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/863a9040-8b44-4afe-a068-32edd43c1adb",
+    "type": "Assertion",
     "issuer": {
-        "id": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com",
+        "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
         "type": "Issuer",
         "name": "VC Issuer Platform"
     },
-    "issuanceDate": "2026-02-25T14:28:38.632Z",
+    "issuanceDate": "2026-02-26T14:37:04.803Z",
+    "recipient": {
+        "type": "email",
+        "hashed": false,
+        "identity": "student@example.com",
+        "name": "Test User"
+    },
+    "badge": {
+        "id": "https://ministry-spreading-states-coding.trycloudflare.com/achievements/retrieval-test",
+        "type": "BadgeClass",
+        "name": "Retrieval Test",
+        "description": "This badge recognizes the successful completion of the Retrieval Test course.",
+        "image": "https://example.com/badges/course-image.png",
+        "criteria": {
+            "type": "Criteria",
+            "narrative": "Completion of all course modules and final assessment."
+        },
+        "issuer": {
+            "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
+            "type": "Issuer"
+        }
+    },
     "credentialStatus": {
-        "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/urn:uuid:965d2ae3-7d45-4ae3-a5ae-35e75140c354",
+        "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/863a9040-8b44-4afe-a068-32edd43c1adb",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "0",
-        "statusListCredential": "https://vpn-televisions-wants-manufactured.trycloudflare.com/credentials/status/list/1"
-    },
-    "credentialSubject": {
-        "id": "did:example:student123",
-        "type": [
-            "AchievementSubject"
-        ],
-        "name": "Test User",
-        "achievement": {
-            "id": "https://vpn-televisions-wants-manufactured.trycloudflare.com/achievements/retrieval-test",
-            "type": [
-                "Achievement"
-            ],
-            "name": "Retrieval Test",
-            "description": "This badge recognizes the successful completion of the Retrieval Test course.",
-            "criteria": {
-                "type": "Criteria",
-                "narrative": "Completion of all course modules and final assessment."
-            },
-            "image": {
-                "id": "https://example.com/badges/course-image.png",
-                "type": "Image"
-            }
-        }
+        "statusListCredential": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/list/1"
     },
     "proof": {
         "type": "Ed25519Signature2020",
-        "created": "2026-02-25T14:28:38.637Z",
+        "created": "2026-02-26T14:37:04.808Z",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:web:https://vpn-televisions-wants-manufactured.trycloudflare.com#key-1",
-        "signature": "yJ9qprE1mfh9W2IvwrmzAooaFUClHLThirZm/2GnOISZeJXYCAyoLTafqFoERaD3YwrDhLT1nPHMofmPousHBw=="
+        "verificationMethod": "did:web:https://ministry-spreading-states-coding.trycloudflare.com#key-1",
+        "signature": "mNE4xh0myphiH3UUhuc2xmSJt46vc/YtJg/cLUpPbsjgE5miLoXlyxkUS1uVxKQT1MsGX/B+llJpQMrqIyA8Ag=="
     }
 }

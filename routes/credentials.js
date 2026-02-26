@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Test endpoint — issues a signed credential for "Abdelsamie"
 router.get("/credentials/test", (req, res) => {
-    const vc = buildCredential("Abdelsamie", "Node.js Course");
+    const vc = buildCredential("Abdelsamie", "Node.js Course", "test");
     res.json(vc);
 });
 
@@ -34,9 +34,12 @@ router.get("/credentials/:id", (req, res) => {
 
 // GET /credentials/status/:id — Returns revocation status
 router.get("/credentials/status/:id", (req, res) => {
-    const { id } = req.params;
+    let { id } = req.params;
+    // Strip urn:uuid: prefix if present
+    const cleanId = id.replace(/^urn:uuid:/, "");
+
     // We check if the credential exists first
-    const vc = getCredentialById(id);
+    const vc = getCredentialById(cleanId);
     if (!vc) {
         return res.status(404).json({ error: "Credential not found." });
     }
