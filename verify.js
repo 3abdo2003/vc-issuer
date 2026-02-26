@@ -38,7 +38,8 @@ console.log("-----------------------------------------");
 console.log("🔍 Credential ID      :", credential.id);
 console.log("👤 Subject Name       :", credential.recipient?.name);
 console.log("🏅 Achievement        :", credential.badge?.name);
-console.log("📅 Issued             :", credential.issuanceDate);
+// Support both VC-style `issuanceDate` and Open Badges `issuedOn`
+console.log("📅 Issued             :", credential.issuedOn || credential.issuanceDate);
 console.log("-----------------------------------------");
 console.log(isValid ? "✅ Signature Valid: true" : "❌ Signature Valid: false");
 console.log("-----------------------------------------");
