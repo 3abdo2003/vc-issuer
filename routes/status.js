@@ -1,4 +1,5 @@
 const express = require("express");
+const { PUBLIC_URL } = require("../config");
 
 const router = express.Router();
 
@@ -6,7 +7,7 @@ router.get("/status", (req, res) => {
     res.json({
         status: "ok",
         version: "1.0.0",
-        issuer: "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
+        issuer: `did:web:${PUBLIC_URL}`,
         timestamp: new Date().toISOString(),
     });
 });

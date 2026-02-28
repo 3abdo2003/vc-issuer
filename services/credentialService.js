@@ -1,6 +1,5 @@
 const { sign } = require("./cryptoService");
-
-const PUBLIC_URL = "https://ministry-spreading-states-coding.trycloudflare.com";
+const { PUBLIC_URL } = require("../config");
 // Open Badges v2 issuer profile URL (must be same-origin HTTPS)
 const ISSUER_URL = `${PUBLIC_URL}/issuer`;
 // DID is still used for cryptographic verification of the proof
@@ -35,7 +34,7 @@ function buildCredential(studentName, courseTitle, overrideUuid = null) {
             type: "BadgeClass",
             name: courseTitle,
             description: `This badge recognizes the successful completion of the ${courseTitle} course.`,
-            image: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg",
+            image: "https://placehold.co/200x200/0ea5e9/ffffff.png?text=Node.js",
             criteria: {
                 type: "Criteria",
                 narrative: "Completion of all course modules and final assessment.",

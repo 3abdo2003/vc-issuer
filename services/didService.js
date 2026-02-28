@@ -1,6 +1,7 @@
 const { getPublicKeyBase58 } = require("./cryptoService");
+const { PUBLIC_URL } = require("../config");
 
-const DID = "did:web:https://ministry-spreading-states-coding.trycloudflare.com";
+const DID = `did:web:${PUBLIC_URL}`;
 
 // Builds a spec-compliant DID Document using the JsonWebKey2020 type.
 // The publicKeyJwk field is what wallets (LinkedIn, employers) use to verify signatures.

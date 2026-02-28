@@ -1,5 +1,6 @@
 require("dotenv").config(); // Load .env → process.env (PORT, KEY values)
 
+const { PUBLIC_URL } = require("./config");
 const express = require("express");
 const cors = require("cors");
 
@@ -31,6 +32,8 @@ app.use(issuerRoutes);
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`✅ Server running on http://0.0.0.0:${PORT}`);
+    console.log(`   PUBLIC_URL   : ${PUBLIC_URL} (set in .env for Open Badge Passport)`);
+    console.log(`   Assertion URL: ${PUBLIC_URL}/credentials/test`);
     console.log(`   DID Document : http://0.0.0.0:${PORT}/.well-known/did.json`);
     console.log(`   Test VC      : http://0.0.0.0:${PORT}/credentials/test`);
     console.log(`   Issue VC     : http://0.0.0.0:${PORT}/credentials/issue?name=Alice&course=Blockchain`);

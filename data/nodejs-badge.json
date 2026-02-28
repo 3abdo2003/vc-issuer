@@ -1,13 +1,13 @@
 {
     "@context": "https://w3id.org/openbadges/v2",
-    "id": "https://ministry-spreading-states-coding.trycloudflare.com/achievements/node.js-course",
+    "id": "https://freelance-suddenly-silk-able.trycloudflare.com/achievements/node.js-course",
     "type": "BadgeClass",
     "name": "Node.js Course",
     "description": "This badge recognizes the successful completion of the Node.js Course course.",
-    "image": "https://example.com/badges/course-image.png",
+    "image": "https://placehold.co/200x200/0ea5e9/ffffff.png?text=Node.js",
     "criteria": {
         "type": "Criteria",
         "narrative": "Completion of all course modules and final assessment."
     },
-    "issuer": "https://ministry-spreading-states-coding.trycloudflare.com/issuer"
+    "issuer": "https://freelance-suddenly-silk-able.trycloudflare.com/issuer"
 }

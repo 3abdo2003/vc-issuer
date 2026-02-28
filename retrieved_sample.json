@@ -2,10 +2,10 @@
     "@context": [
         "https://w3id.org/openbadges/v2"
     ],
-    "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/863a9040-8b44-4afe-a068-32edd43c1adb",
+    "id": "https://freelance-suddenly-silk-able.trycloudflare.com/credentials/863a9040-8b44-4afe-a068-32edd43c1adb",
     "type": "Assertion",
     "issuer": {
-        "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
+        "id": "did:web:https://freelance-suddenly-silk-able.trycloudflare.com",
         "type": "Issuer",
         "name": "VC Issuer Platform"
     },
@@ -17,7 +17,7 @@
         "name": "Test User"
     },
     "badge": {
-        "id": "https://ministry-spreading-states-coding.trycloudflare.com/achievements/retrieval-test",
+        "id": "https://freelance-suddenly-silk-able.trycloudflare.com/achievements/retrieval-test",
         "type": "BadgeClass",
         "name": "Retrieval Test",
         "description": "This badge recognizes the successful completion of the Retrieval Test course.",
@@ -27,22 +27,22 @@
             "narrative": "Completion of all course modules and final assessment."
         },
         "issuer": {
-            "id": "did:web:https://ministry-spreading-states-coding.trycloudflare.com",
+            "id": "did:web:https://freelance-suddenly-silk-able.trycloudflare.com",
             "type": "Issuer"
         }
     },
     "credentialStatus": {
-        "id": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/863a9040-8b44-4afe-a068-32edd43c1adb",
+        "id": "https://freelance-suddenly-silk-able.trycloudflare.com/credentials/status/863a9040-8b44-4afe-a068-32edd43c1adb",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "0",
-        "statusListCredential": "https://ministry-spreading-states-coding.trycloudflare.com/credentials/status/list/1"
+        "statusListCredential": "https://freelance-suddenly-silk-able.trycloudflare.com/credentials/status/list/1"
     },
     "proof": {
         "type": "Ed25519Signature2020",
         "created": "2026-02-26T14:37:04.808Z",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:web:https://ministry-spreading-states-coding.trycloudflare.com#key-1",
+        "verificationMethod": "did:web:https://freelance-suddenly-silk-able.trycloudflare.com#key-1",
         "signature": "mNE4xh0myphiH3UUhuc2xmSJt46vc/YtJg/cLUpPbsjgE5miLoXlyxkUS1uVxKQT1MsGX/B+llJpQMrqIyA8Ag=="
     }
 }
